@@ -110,13 +110,23 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/filmInfo.js":
+/*!*************************!*\
+  !*** ./src/filmInfo.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getShow\": () => (/* binding */ getShow)\n/* harmony export */ });\nconst baseURL = 'https://api.tvmaze.com';\r\n\r\nconst getShow = async () => {\r\n    for (let i = 1; i < 7; i += 1) {\r\n        const showInfo = await fetch(`${baseURL}/shows/${i}`);\r\n        const jsonInfo = await showInfo.json();\r\n        return jsonInfo;\r\n    }\r\n}\n\n//# sourceURL=webpack://javascript-capstone-kanban/./src/filmInfo.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\nwindow.addEventListener('DOMContentLoaded', () => {\n  const filmContainer = document.querySelector('.container');\n  for (let i = 0; i < 6; i += 1) {\n    const filmCard = document.createElement('li');\n    filmCard.className = 'film';\n    filmCard.innerHTML = `<img class=\"poster\" src=\"./src/poster.jpg\">\n    <div class=\"card-header\">\n    <p>Film Title</p>\n    <img class=\"like-icon\">\n    </div>\n    <p>Likes</p>\n    <button type=\"button\" class=\"comment-popup\">Comments</button>\n    <button type=\"button\" class=\"rent-popup\">Rent</button>`;\n    filmContainer.appendChild(filmCard);\n  }\n});\n\n//# sourceURL=webpack://javascript-capstone-kanban/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _filmInfo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./filmInfo.js */ \"./src/filmInfo.js\");\n\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n  (0,_filmInfo_js__WEBPACK_IMPORTED_MODULE_1__.getShow)();\r\n  const filmContainer = document.querySelector('.container');\r\n  for (let i = 0; i < 6; i += 1) {\r\n    const filmCard = document.createElement('li');\r\n    filmCard.className = 'film';\r\n    filmCard.innerHTML = `<img class=\"poster\" src=\"./src/poster.jpg\">\r\n    <div class=\"card-header\">\r\n    <p>Film Title</p>\r\n    <img class=\"like-icon\">\r\n    </div>\r\n    <p>Likes</p>\r\n    <button type=\"button\" class=\"comment-popup\">Comments</button>\r\n    <button type=\"button\" class=\"rent-popup\">Rent</button>`;\r\n    filmContainer.appendChild(filmCard);\r\n  }\r\n});\r\n\r\n\n\n//# sourceURL=webpack://javascript-capstone-kanban/./src/index.js?");
 
 /***/ })
 
