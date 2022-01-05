@@ -53,15 +53,15 @@ const updateCommentTitle = (id) => {
   }
 };
 
-const genPopupContent = async (movie) => {
+const genPopupContent = async (show) => {
   const popup = document.createElement('div');
   popup.classList.add('popup');
 
   popup.innerHTML = '';
-  const image = movie.image?.medium ?? 'https://i.ibb.co/nPzyFm6/placeholder.png';
+  const image = show.image?.medium ?? 'https://i.ibb.co/nPzyFm6/placeholder.png';
 
-  const movieId = movie.id;
-  const comments = await getComments(movieId);
+  const showId = show.id;
+  const comments = await getComments(showId);
 
   let commentBlock = '';
 
@@ -72,14 +72,14 @@ const genPopupContent = async (movie) => {
             <img src="${image}" />
             <span type="button" class="material-icons-outlined close-popup">close</span>
           </div>
-          <h2>${movie.name}</h2>
-          <div class="movie-description-1">
-            <p>Type: ${movie.type}</p>
-            <p>Language: ${movie.language}</p>
+          <h2>${show.name}</h2>
+          <div class="show-description-1">
+            <p>Type: ${show.type}</p>
+            <p>Language: ${show.language}</p>
           </div>
-          <div class="movie-description-2">
-            <p>Status: ${movie.status}</p>
-            <p>Premiered: ${movie.premiered}</p>
+          <div class="show-description-2">
+            <p>Status: ${show.status}</p>
+            <p>Premiered: ${show.premiered}</p>
           </div>
           <div class="comments-display">
             ${commentBlock}
@@ -88,7 +88,7 @@ const genPopupContent = async (movie) => {
             <h3>Add a comment</h3>
             <input name="username" placeholder="Your name" />
             <textarea name="insights" rows="6" placeholder="Your Thoughts"></textarea>
-            <span type="button" comment-id="${movie.id}" class="material-icons-outlined">comment</span>
+            <span type="button" comment-id="${show.id}" class="material-icons-outlined">comment</span>
           </div>
         </div>
       </div>`);
@@ -98,7 +98,7 @@ const genPopupContent = async (movie) => {
     document.querySelector('.popup').remove();
   });
 
-  const commentsDisplay = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0]
+  const commentsDisplay = document.querySelectorAll(`[comment-id="${show.id}"]`)[0]
     .parentElement.previousElementSibling;
 
   if (comments.length > 0) {
@@ -111,9 +111,9 @@ const genPopupContent = async (movie) => {
   }
   commentsDisplay.insertAdjacentHTML('beforeend', commentBlock);
 
-  updateCommentTitle(movie.id);
+  updateCommentTitle(show.id);
 
-  const commentButton = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0];
+  const commentButton = document.querySelectorAll(`[comment-id="${show.id}"]`)[0];
   commentButton.addEventListener('click', async (e) => {
     const commentObject = {
       item_id: Number(e.target.getAttribute('comment-id')),
@@ -124,9 +124,9 @@ const genPopupContent = async (movie) => {
     const result = await createComment(commentObject);
 
     if (result === 201) {
-      const comments = await getComments(movieId);
+      const comments = await getComments(showId);
       const lastComment = comments[comments.length - 1];
-      const commentsDisplay = document.querySelectorAll(`[comment-id="${movie.id}"]`)[0]
+      const commentsDisplay = document.querySelectorAll(`[comment-id="${show.id}"]`)[0]
         .parentElement.previousElementSibling;
       const date = lastComment.creation_date.split('-');
       const dateFormated = `${date[1]}/${date[2]}/${date[0]}`;
@@ -141,14 +141,14 @@ const genPopupContent = async (movie) => {
             <p>${dateFormated} ${lastComment.username}: ${lastComment.comment}</p>
           `);
       }
-      updateCommentTitle(movie.id);
+      updateCommentTitle(show.id);
     }
   });
 };
 
 const displayPopup = async (id) => {
-  const movie = await pullId(id);
-  genPopupContent(movie);
+  const show = await pullId(id);
+  genPopupContent(show);
 };
 
 export default displayPopup;
