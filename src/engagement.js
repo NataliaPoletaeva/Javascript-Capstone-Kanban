@@ -58,7 +58,6 @@ const genPopupContent = async (show) => {
   popup.classList.add('popup');
 
   popup.innerHTML = '';
-  const image = show.image?.medium ?? 'https://i.ibb.co/nPzyFm6/placeholder.png';
 
   const showId = show.id;
   const comments = await getComments(showId);
