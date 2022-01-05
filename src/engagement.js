@@ -58,6 +58,7 @@ const genPopupContent = async (show) => {
   popup.classList.add('popup');
 
   popup.innerHTML = '';
+  const image = show.image?.medium ?? 'https://i.ibb.co/nPzyFm6/placeholder.png';
 
   const showId = show.id;
   const comments = await getComments(showId);
@@ -68,10 +69,18 @@ const genPopupContent = async (show) => {
       <div class="popup-container">
         <div class="inner-content">
           <div class="photo-close">
-            <img src="${show.image.medium}" />
+            <img src="${image}" />
             <span type="button" class="material-icons-outlined close-popup">close</span>
           </div>
           <h2>${show.name}</h2>
+          <div class="show-description-1">
+            <p>Type: ${show.type}</p>
+            <p>Language: ${show.language}</p>
+          </div>
+          <div class="show-description-2">
+            <p>Status: ${show.status}</p>
+            <p>Premiered: ${show.premiered}</p>
+          </div>
           <div class="comments-display">
             ${commentBlock}
           </div>
