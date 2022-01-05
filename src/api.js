@@ -16,5 +16,4 @@ const pullId = async (id) => {
   return show;
 };
 
-exports.pullId = pullId;
-exports.pullShows = pullShows;
+export { pullMovies, pullId };
