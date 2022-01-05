@@ -69,18 +69,10 @@ const genPopupContent = async (show) => {
       <div class="popup-container">
         <div class="inner-content">
           <div class="photo-close">
-            <img src="${image}" />
+            <img src="${show.image.medium}" />
             <span type="button" class="material-icons-outlined close-popup">close</span>
           </div>
           <h2>${show.name}</h2>
-          <div class="show-description-1">
-            <p>Type: ${show.type}</p>
-            <p>Language: ${show.language}</p>
-          </div>
-          <div class="show-description-2">
-            <p>Status: ${show.status}</p>
-            <p>Premiered: ${show.premiered}</p>
-          </div>
           <div class="comments-display">
             ${commentBlock}
           </div>
