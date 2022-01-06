@@ -32,14 +32,14 @@ export const renderInterface = async () => {
       like.addEventListener('click', async () => {
         await fetch(likesURL, {
           method: 'POST',
-          body: JSON.stringify({ item_id: id, }),
+          body: JSON.stringify({ item_id: id }),
           headers: {
             'Content-Type': 'application/json; charset=UTF-8',
           },
         });
         likesArr = await getLike();
         const likesCount = document.querySelectorAll('.likes-counter');
-        likesCount[id].innerHTML = `${likesArr[id].likes}`
+        likesCount[id].innerHTML = `${likesArr[id].likes}`;
         if (like.classList.contains('far')) {
           like.className = 'fas fa-heart';
         } else {
@@ -48,4 +48,4 @@ export const renderInterface = async () => {
       });
     });
   });
-}
+};

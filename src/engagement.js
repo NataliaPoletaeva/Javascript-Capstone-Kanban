@@ -11,7 +11,6 @@ export const postLike = async (id) => {
       'Content-Type': 'application/json',
     },
   });
-  console.log(id);
   return response;
 };
 
