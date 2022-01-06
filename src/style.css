@@ -45,6 +45,17 @@ ul {
   border: 1px solid #000;
 }
 
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
 footer {
   border-top: 1px solid #000;
 }

@@ -1,4 +1,7 @@
 import './style.css';
-import { loadInterface } from './interface.js';
+import { renderInterface } from './interface.js';
+import { counter } from './itemCounter.js';
 
-window.addEventListener('DOMContentLoaded', loadInterface());
+window.addEventListener('DOMContentLoaded', renderInterface());
+
+counter();
