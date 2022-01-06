@@ -1,6 +1,6 @@
 import { pullId } from './api.js';
 
-const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/HEoRb0SEeq8AkUfTDmOs/comments';
+const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H /comments';
 
 const createComment = async (obj) => {
   const commentBody = {
@@ -88,7 +88,7 @@ const genPopupContent = async (show) => {
             <h3>Add a comment</h3>
             <input name="username" placeholder="Your name" />
             <textarea name="insights" rows="6" placeholder="Your Thoughts"></textarea>
-            <span type="button" comment-id="${show.id}" class="material-icons-outlined">comment</span>
+            <span type="button" comment-id="${show.id}" class="material-icons-outlined btn-com">comment</span>
           </div>
         </div>
       </div>`);
