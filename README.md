@@ -1,9 +1,9 @@
-# Leaderboard
+# MicroTheatre
 
-> The JavaScript capstone project is about building our own web application based on an external API [TV Maze API](https://www.tvmaze.com/api). We selcted an API that retrieves TV shows and show various data about the shows. The webapp has 2 user interfaces and user can like and comment on each show.
+> The JavaScript capstone project is about building our own web application based on an external API [TV Maze API](https://www.tvmaze.com/api). We selected an API that retrieves TV shows and show various data about the shows. The webapp has 2 user interfaces and user can like and comment on each show.
 
 
-![App image]()
+![App image](https://user-images.githubusercontent.com/91270103/148570130-c21a73df-b87d-4f6a-85fc-5d00f9816876.png)
 
 ## 🏗️ Built With
 
@@ -15,7 +15,7 @@
 
 ## 🖇️ LiveLink
 
-- [Live demo here]()
+- [Live demo here](https://mystifying-heyrovsky-46afd9.netlify.app/)
 
 ## 🛫 Getting Started
 To get a local copy up and running, follow the steps in Setup below.
