@@ -1,6 +1,25 @@
 import { pullId } from './api.js';
 
+export const likesURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H/likes/';
 const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H /comments';
+
+export const postLike = async (id) => {
+  const response = await fetch(likesURL, {
+    method: 'POST',
+    body: JSON.stringify({ item_id: id }),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  return response;
+};
+
+export const getLike = async () => {
+  const response = await fetch(likesURL);
+  const like = await response.json();
+
+  return like;
+};
 
 const createComment = async (obj) => {
   const commentBody = {
