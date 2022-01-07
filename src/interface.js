@@ -3,7 +3,7 @@ import displayPopup, { getLike, likesURL } from './engagement.js';
 
 export const renderInterface = async () => {
   const showContainer = document.querySelector('.container');
-  let likesArr = await getLike();
+  const likesArr = await getLike();
   getShow().then((showArray) => {
     showArray.forEach((show, id) => {
       const showCard = document.createElement('li');
@@ -64,7 +64,6 @@ export const renderInterface = async () => {
           });
         }
       });
-    }
-    );
+    });
   });
 };
