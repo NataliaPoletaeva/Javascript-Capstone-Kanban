@@ -1,8 +1,7 @@
 import { getShow } from './filmInfo.js';
 import displayPopup, { getLike, likesURL } from './engagement.js';
 
-
-export const loadInterface = async () => {
+export const renderInterface = async () => {
   const showContainer = document.querySelector('.container');
   const likesArr = await getLike();
   getShow().then((showArray) => {
