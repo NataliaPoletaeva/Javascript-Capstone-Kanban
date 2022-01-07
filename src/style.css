@@ -71,17 +71,26 @@ ul {
 }
 
 .popup-container {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
+  max-width: 400px;
+  height: 85%;
   border-radius: 1rem;
-  margin: 4rem auto;
-  padding: 1.5rem;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 2rem;
   background-color: #f9fffd;
   z-index: 20;
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .popup-header {
@@ -90,6 +99,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  padding-top: 15rem;
 }
 
 .fa-times {
@@ -101,15 +111,13 @@ ul {
 .show-info {
   width: 80%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   margin: 1.5rem auto;
   font-size: 1.15rem;
   line-height: 1.75rem;
 }
 
 .image-info {
-  width: 60%;
   margin: 0 auto;
 }
 
@@ -118,16 +126,17 @@ ul {
 }
 
 .comment-section {
-  width: 100%;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
 }
 
 .comment-display {
-  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 
 .comment-create {
+  gap: 0.75rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -135,11 +144,10 @@ ul {
 
 input[name="username"],
 textarea[name="insights"] {
-  width: 80%;
+  width: 100%;
   resize: none;
   padding: 0.75rem;
   border-radius: 1rem;
-  margin-bottom: 20px;
 }
 
 .photo-close img {
@@ -166,12 +174,18 @@ textarea[name="insights"] {
 }
 
 button {
-  background-color: #043322;
+  background-color: #145f44;
+  border: none;
   color: #90f1ce;
   padding: 10px 20px;
   border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
+  transition: 300ms;
+}
+
+button:hover {
+  background-color: #043322;
 }
 
 .film {
