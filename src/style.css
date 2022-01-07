@@ -80,13 +80,12 @@ ul {
   max-width: 400px;
   height: 85%;
   border-radius: 1rem;
-  margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  padding: 2rem;
+  padding: 1rem;
   background-color: #f9fffd;
   z-index: 20;
   overflow-x: hidden;
@@ -94,22 +93,23 @@ ul {
 }
 
 .popup-header {
-  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem auto;
-  padding-top: 18rem;
+  margin: 0;
+  padding: 1rem;
 }
 
 .fa-times {
   cursor: pointer;
+  margin-left: 1.1rem;
   width: 1rem;
   height: 1rem;
 }
 
 .show-info {
-  width: 80%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0.5rem auto;
@@ -127,6 +127,7 @@ ul {
 
 .comment-section {
   margin: 2rem auto;
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
 }

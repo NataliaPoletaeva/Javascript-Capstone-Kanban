@@ -86,17 +86,17 @@ const genPopupContent = async (show) => {
 
   popup.insertAdjacentHTML('beforeend', ` 
       <div class="popup-container">
-        <div class="popup-header">
+        <div class="show-info">
+          <div class="popup-header">
             <h2>${show.name}</h2>
             <i class="fas fa-times close-popup"></i>
-        </div>
-        <div class="show-info">
+          </div>
           <div class="image-info">
             <img src="${image}" />
-              <p>Type: ${show.type}</p>
-              <p>Language: ${show.language}</p>
-              <p>Status: ${show.status}</p>
-              <p>Premiered: ${show.premiered}</p>
+            <p>Type: ${show.type}</p>
+            <p>Language: ${show.language}</p>
+            <p>Status: ${show.status}</p>
+            <p>Premiered: ${show.premiered}</p>
           </div>
           <div class="comment-section"> 
             <div class="comments-display">
