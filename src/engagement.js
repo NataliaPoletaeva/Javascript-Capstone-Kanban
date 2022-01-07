@@ -1,7 +1,7 @@
 import { pullId } from './api.js';
 
 export const likesURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H/likes/';
-const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H /comments';
+const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H/comments';
 
 export const postLike = async (id) => {
   const response = await fetch(likesURL, {

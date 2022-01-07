@@ -62,6 +62,14 @@ ul {
   overflow-y: hidden;
 }
 
+.inner-content,
+.comment-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .popup-container {
   display: flex;
   flex-direction: column;
@@ -110,9 +118,13 @@ ul {
 }
 
 .comment-section {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.comment-display {
+  padding-left: 1rem;
 }
 
 .comment-create {
@@ -123,6 +135,7 @@ ul {
 
 input[name="username"],
 textarea[name="insights"] {
+  width: 80%;
   resize: none;
   padding: 0.75rem;
   border-radius: 1rem;
