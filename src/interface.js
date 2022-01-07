@@ -29,23 +29,42 @@ export const renderInterface = async () => {
     });
     const likeBtn = document.querySelectorAll('.like-btn');
     likeBtn.forEach((like, id) => {
-      like.addEventListener('click', async () => {
-        await fetch(likesURL, {
-          method: 'POST',
-          body: JSON.stringify({ item_id: id }),
-          headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
-          },
-        });
-        likesArr = await getLike();
-        const likesCount = document.querySelectorAll('.likes-counter');
-        likesCount[id].innerHTML = `${likesArr[id].likes}`;
-        if (like.classList.contains('far')) {
-          like.className = 'fas fa-heart';
+      like.addEventListener('click', async (e) => {
+        const likesCounter = document.querySelectorAll('.likes-counter')[id];
+        const showId = e.target.parentElement.parentElement.getAttribute('id');
+        if (e.target.classList.contains('far')) {
+          e.target.classList.remove('far');
+          e.target.classList.add('fas');
+          likesCounter.innerHTML = Number(likesCounter.innerHTML) + 1;
+          const likeObject = {
+            item_id: Number(showId),
+            likes: Number(likesCounter.innerHTML),
+          };
+          await fetch(likesURL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(likeObject),
+          });
         } else {
-          like.className = 'far fa-heart';
+          e.target.classList.remove('fas');
+          e.target.classList.add('far');
+          likesCounter.innerHTML = Number(likesCounter.innerHTML) - 1;
+          const likeObject = {
+            item_id: Number(showId),
+            likes: Number(likesCounter.innerHTML),
+          };
+          await fetch(likesURL, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(likeObject),
+          });
         }
       });
-    });
+    }
+    );
   });
 };
