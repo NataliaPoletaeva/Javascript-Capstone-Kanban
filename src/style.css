@@ -1,16 +1,30 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+  background-color: #f9fffd;
 }
 
 header {
-  height: 3rem;
+  height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 5%;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #043322;
+  background-color: #90f1ce;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+}
+
+.logo {
+  width: 18%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
 
 ul {
@@ -18,7 +32,7 @@ ul {
 }
 
 .nav {
-  width: 45%;
+  width: 35%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,49 +41,91 @@ ul {
 }
 
 .container {
-  width: 85%;
+  width: 70%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 2rem auto;
+  margin: 0 auto;
+  padding: 2rem 0;
   row-gap: 2rem;
-  column-gap: 1rem;
+  column-gap: 5%;
 }
 
 .popup {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgb(21 21 21 / 85%);
+  background-color: #151515d9;
   width: 100%;
   height: 100vh;
   z-index: 20;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(0.25rem);
   overflow-y: hidden;
 }
 
 .popup-container {
-  position: fixed;
-  border-radius: 15px;
-  left: calc(50% - 250px);
-  height: 85%;
-  margin-top: 60px;
-  padding: 25px;
-  background-color: rgb(235, 235, 235);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  border-radius: 1rem;
+  margin: 4rem auto;
+  padding: 1.5rem;
+  background-color: #f9fffd;
   z-index: 20;
   overflow-y: auto;
 }
 
-.inner-content,
-.comment-create {
+.popup-header {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.fa-times {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+}
+
+.show-info {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.5rem auto;
+  font-size: 1.15rem;
+  line-height: 1.75rem;
+}
+
+.image-info {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.image-info > img {
+  margin-bottom: 1rem;
+}
+
+.comment-section {
+  width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+}
+
+.comment-create {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 input[name="username"],
 textarea[name="insights"] {
+  resize: none;
+  padding: 0.75rem;
+  border-radius: 1rem;
   margin-bottom: 20px;
 }
 
@@ -96,21 +152,26 @@ textarea[name="insights"] {
   align-self: flex-end;
 }
 
-.btn-com {
-  background-color: blue;
-  color: #fff;
+button {
+  background-color: #043322;
+  color: #90f1ce;
   padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 1rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .film {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  border: 1px solid #000;
+  border: 1px solid #043322;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #90f1ce;
 }
 
 .card-header {
@@ -125,5 +186,7 @@ textarea[name="insights"] {
 }
 
 footer {
-  border-top: 1px solid #000;
+  border-top: 1px solid #043322;
+  padding: 2.5rem 4rem;
+  font-size: 1.5rem;
 }

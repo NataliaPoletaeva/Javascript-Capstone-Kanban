@@ -1,7 +1,6 @@
 import { pullId } from './api.js';
 
 export const likesURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H/likes/';
-
 const commentsURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/rHhNSvK2vYzG0HnCQK6H /comments';
 
 export const postLike = async (id) => {
@@ -87,31 +86,33 @@ const genPopupContent = async (show) => {
 
   popup.insertAdjacentHTML('beforeend', ` 
       <div class="popup-container">
-        <div class="inner-content">
-          <div class="photo-close">
+        <div class="popup-header">
+            <h2>${show.name}</h2>
+            <i class="fas fa-times close-popup"></i>
+        </div>
+        <div class="show-info">
+          <div class="image-info">
             <img src="${image}" />
-            <span type="button" class="material-icons-outlined close-popup">close</span>
+              <p>Type: ${show.type}</p>
+              <p>Language: ${show.language}</p>
+              <p>Status: ${show.status}</p>
+              <p>Premiered: ${show.premiered}</p>
           </div>
-          <h2>${show.name}</h2>
-          <div class="show-description-1">
-            <p>Type: ${show.type}</p>
-            <p>Language: ${show.language}</p>
-          </div>
-          <div class="show-description-2">
-            <p>Status: ${show.status}</p>
-            <p>Premiered: ${show.premiered}</p>
-          </div>
-          <div class="comments-display">
-            ${commentBlock}
-          </div>
-          <div class="comment-create">
-            <h3>Add a comment</h3>
-            <input name="username" placeholder="Your name" />
-            <textarea name="insights" rows="6" placeholder="Your Thoughts"></textarea>
-            <span type="button" comment-id="${show.id}" class="material-icons-outlined btn-com">comment</span>
+          <div class="comment-section"> 
+            <div class="comments-display">
+              ${commentBlock}
+            </div>
+            <div class="comment-create">
+              <h3>Add a comment</h3>
+              <input name="username" placeholder="Your name" />
+              <textarea name="insights" rows="6" placeholder="Your Thoughts"></textarea>
+              <button type="button" comment-id="${show.id}" class="material-icons-outlined btn-com">Comment</button>
+            </div>
           </div>
         </div>
-      </div>`);
+       </div>
+      </div>
+    </div>`);
   document.querySelector('main').appendChild(popup);
   const closeButton = document.getElementsByClassName('close-popup')[0];
   closeButton.addEventListener('click', () => {
