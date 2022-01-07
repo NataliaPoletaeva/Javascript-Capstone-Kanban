@@ -126,6 +126,7 @@ ul {
 }
 
 .comment-section {
+  width: 90%;
   margin: 2rem auto;
   padding-bottom: 3rem;
   display: flex;
