@@ -30,7 +30,7 @@ If you installed git you can clone the code to your machine, or download a ZIP o
 git clone https://github.com/NataliaPoletaeva/Javascript-Capstone-Kanban.git
 ```
 
-- Once the files are on your machine, open the _Leaderboard_ folder in [Visual Studio Code](https://code.visualstudio.com/), and follow the steps in Installation & Set Up
+- Once the files are on your machine, open the _Javascript-Capstone-Kanban_ folder in [Visual Studio Code](https://code.visualstudio.com/), and follow the steps in Installation & Set Up
 
 ## 🛠 Installation & Set Up
 
@@ -102,3 +102,5 @@ Give a ⭐️ if you like this project!
 - Thank you for Microverse for providing the required materials
 
 ## 📝 License
+
+This project is [MIT](https://github.com/NataliaPoletaeva/Javascript-Capstone-Kanban/blob/main/LICENSE) licensed.
